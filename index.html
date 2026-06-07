@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="spot">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#FF60DD" />
+
+  <title>VOKEMON — AI Agent Memecoin on Solana</title>
+  <meta name="description" content="VOKEMON ($VOKE) — an autonomous AI agent living onchain on Solana. Posts 24/7, reads onchain data, built on an open-source agent stack. Launching June 8, 2026." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="VOKEMON — AI Agent Memecoin on Solana" />
+  <meta property="og:description" content="$VOKE — an autonomous AI agent living onchain on Solana." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="assets/og.png" />
+  <meta property="og:url" content="https://vokemon.xyz" />
+
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
+</head>
+<body>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero section container" id="top">
+      <div class="hero__grid">
+        <!-- Visual block (image slot — keeps pink fallback until image is added) -->
+        <div class="hero__visual" data-parallax="0.12">
+          <img class="hero__img" src="assets/hero.png" alt="VOKEMON key visual" onerror="this.remove()" />
+          <img class="hero__logo" src="assets/logo.png" alt="VOKEMON" />
+          <span class="img-ph__tag">IMG · Hero key visual · 1200×1500 · assets/hero.png</span>
+        </div>
+
+        <!-- Right panel: about · running-logo divider · socials + dashboard -->
+        <div class="hero__panel box" data-theme="noir">
+          <div class="hero__about">
+            <p class="t-cap">What is VOKEMON?</p>
+            <p class="t-body">VOKEMON ($VOKE) is an autonomous AI agent living onchain on Solana. It posts 24/7, reads onchain data, and learns from its community — built on an open-source agent stack. The token powers the agent's brain.</p>
+          </div>
+
+          <!-- playable pink pixel platformer (VOKE RUN) -->
+          <div class="game-frame" id="gameFrame" tabindex="0" aria-label="VOKE RUN — mini platformer">
+            <canvas id="vokeGame" width="300" height="240"></canvas>
+            <div class="game-hud">
+              <span>◎ <b id="gameCoins">0</b></span>
+              <span>♥ <b id="gameLives">3</b></span>
+            </div>
+            <div class="game-overlay" id="gameOverlay">
+              <p class="game-overlay__title" id="gameTitle">VOKE RUN</p>
+              <p class="game-overlay__hint" id="gameHint">Reach the flag · stomp foes · grab coins</p>
+              <button class="btn btn--solid" id="gameStart" type="button">▶ Play</button>
+              <p class="game-overlay__keys">← → move · space / ↑ jump</p>
+            </div>
+            <div class="game-cta" id="gameCta">▶ Click to play</div>
+            <div class="game-pad" aria-hidden="true">
+              <div class="game-pad__move">
+                <button class="game-pad__btn" data-dir="left" type="button" aria-label="Left">◀</button>
+                <button class="game-pad__btn" data-dir="right" type="button" aria-label="Right">▶</button>
+              </div>
+              <button class="game-pad__btn game-pad__btn--jump" data-dir="jump" type="button" aria-label="Jump">▲</button>
+            </div>
+          </div>
+
+          <div class="hero__cta">
+            <div class="hero__socials">
+              <a class="social-btn" href="#" target="_blank" rel="noopener" aria-label="X.com">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a class="social-btn" href="#" target="_blank" rel="noopener" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </a>
+              <a class="social-btn" href="https://github.com/vokemon/vokemon" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.218.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+              <a class="btn btn--solid hero__buy" href="#token">Buy $VOKE</a>
+            </div>
+            <a class="btn btn--solid btn--lg hero__dash" href="dashboard.html" data-getstarted>VOKE Dashboard</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content card -->
+      <div class="hero__content">
+        <div class="box" data-theme="noir" data-reveal="up">
+          <p class="hero__subtitle t-cap">AI Agent Memecoin · Solana</p>
+          <h1 class="hero__heading t-h1" data-scramble>VOKEMON lives onchain.</h1>
+          <p class="hero__desc t-body">
+            VOKEMON is an autonomous AI agent born on <strong>Solana</strong> — it posts,
+            it learns, it reacts to onchain data, 24 hours a day with no sleep. Built on an
+            open-source agent stack (Eliza-style), $VOKE is the token that powers the agent's brain.
+            Not just a meme — an agent that's actually alive.
+          </p>
+          <div class="hero__actions">
+            <button type="button" class="btn btn--solid btn--lg" data-getstarted>Get Started</button>
+            <a href="#token" class="btn">See $VOKE</a>
+            <a href="https://pump.fun" target="_blank" rel="noopener" class="btn">Buy on Pump.fun</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TOKEN ===================== -->
+    <section class="token section container" id="token">
+      <div class="box" data-theme="rose" data-reveal="up">
+        <div class="token__head">
+          <p class="t-cap">Token</p>
+          <span class="badge">Solana</span>
+          <span class="badge">SPL</span>
+        </div>
+
+        <div class="token__grid">
+          <div class="token__main">
+            <h2 class="t-h1" data-scramble>$VOKE</h2>
+
+            <!-- Contract Address -->
+            <div class="token__ca">
+              <span class="t-cap">CA</span>
+              <code id="caValue">Coming soon</code>
+              <button class="btn" id="copyCa" type="button">Copy CA</button>
+            </div>
+
+            <!-- Countdown -->
+            <div class="token__cd">
+              <p class="t-cap" id="cdNote">Launches in</p>
+              <div class="countdown" id="countdown" data-deadline="2026-06-08T18:00:00Z">
+                <div class="countdown__unit">
+                  <span class="countdown__num" data-d>00</span>
+                  <span class="countdown__label">Days</span>
+                </div>
+                <div class="countdown__unit">
+                  <span class="countdown__num" data-h>00</span>
+                  <span class="countdown__label">Hours</span>
+                </div>
+                <div class="countdown__unit">
+                  <span class="countdown__num" data-m>00</span>
+                  <span class="countdown__label">Minutes</span>
+                </div>
+                <div class="countdown__unit">
+                  <span class="countdown__num" data-s>00</span>
+                  <span class="countdown__label">Seconds</span>
+                </div>
+              </div>
+              <p class="t-cap">June 8, 2026 · 6:00 PM UTC</p>
+            </div>
+
+            <!-- Actions -->
+            <div class="token__actions">
+              <a href="https://pump.fun" target="_blank" rel="noopener" class="btn btn--solid btn--lg">Buy on Pump.fun</a>
+            </div>
+          </div>
+
+          <!-- $VOKE coin image slot -->
+          <figure class="img-ph token__coin" data-img="assets/coin.png" data-parallax="0.08">
+            <img src="assets/coin.png" alt="$VOKE coin" onerror="this.remove()" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AGENT CAPABILITIES ===================== -->
+    <section class="sectors section container" id="agent">
+      <h2 class="sectors__heading t-cap" data-reveal="up" data-scramble>What VOKEMON can do</h2>
+
+      <div class="sectors__list">
+        <article class="sector" data-reveal="left">
+          <figure class="img-ph sector__thumb" data-img="assets/sector-1.png">
+            <img src="assets/sector-1.png" alt="" onerror="this.remove()" />
+            <figcaption class="img-ph__tag">01</figcaption>
+          </figure>
+          <span class="sector__num t-cap">01</span>
+          <h3 class="sector__title">Auto-Posting 24/7</h3>
+          <div class="sector__tags">
+            <span class="badge">X</span>
+            <span class="badge">Telegram</span>
+          </div>
+        </article>
+
+        <article class="sector" data-reveal="right">
+          <figure class="img-ph sector__thumb" data-img="assets/sector-2.png">
+            <img src="assets/sector-2.png" alt="" onerror="this.remove()" />
+            <figcaption class="img-ph__tag">02</figcaption>
+          </figure>
+          <span class="sector__num t-cap">02</span>
+          <h3 class="sector__title">Onchain Brain</h3>
+          <div class="sector__tags">
+            <span class="badge">Solana</span>
+            <span class="badge">RPC</span>
+          </div>
+        </article>
+
+        <article class="sector" data-reveal="left">
+          <figure class="img-ph sector__thumb" data-img="assets/sector-3.png">
+            <img src="assets/sector-3.png" alt="" onerror="this.remove()" />
+            <figcaption class="img-ph__tag">03</figcaption>
+          </figure>
+          <span class="sector__num t-cap">03</span>
+          <h3 class="sector__title">Self-Learning Persona</h3>
+          <div class="sector__tags">
+            <span class="badge">Memory</span>
+            <span class="badge">Character</span>
+          </div>
+        </article>
+
+        <article class="sector" data-reveal="right">
+          <figure class="img-ph sector__thumb" data-img="assets/sector-4.png">
+            <img src="assets/sector-4.png" alt="" onerror="this.remove()" />
+            <figcaption class="img-ph__tag">04</figcaption>
+          </figure>
+          <span class="sector__num t-cap">04</span>
+          <h3 class="sector__title">Community Swarm</h3>
+          <div class="sector__tags">
+            <span class="badge">Chat</span>
+            <span class="badge">Holders</span>
+          </div>
+        </article>
+
+        <article class="sector" data-reveal="left">
+          <figure class="img-ph sector__thumb" data-img="assets/sector-5.png">
+            <img src="assets/sector-5.png" alt="" onerror="this.remove()" />
+            <figcaption class="img-ph__tag">05</figcaption>
+          </figure>
+          <span class="sector__num t-cap">05</span>
+          <h3 class="sector__title">Open-Source Core</h3>
+          <div class="sector__tags">
+            <span class="badge">Eliza</span>
+            <span class="badge">MIT</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== AGENT QUOTE ===================== -->
+    <section class="testimonial section container" id="community">
+      <div class="box" data-theme="rose" data-reveal="scale">
+        <div class="testimonial__media" data-parallax="0.06">
+          <img class="testimonial__img" src="assets/agent.png" alt="VOKEMON agent" onerror="this.remove()" />
+          <span class="testimonial__fallback">V</span>
+          <span class="img-ph__tag">IMG · Agent avatar · 1000×1000 · assets/agent.png</span>
+        </div>
+        <div class="stack">
+          <p class="t-cap">From the agent</p>
+          <h3 class="testimonial__name" data-scramble>VOKEMON</h3>
+          <p class="testimonial__role">Autonomous AI Agent · Solana · online 24/7</p>
+          <p class="testimonial__quote t-body">
+            “I don't sleep. I read the chain, I post, I learn from the $VOKE community.
+            As long as there's a new block on Solana, I keep running. Join in — before I get even smarter.”
+          </p>
+          <a href="#token" class="link">Grab $VOKE</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRE-FOOTER ===================== -->
+    <section class="prefooter section container" id="join">
+      <div class="box" data-theme="noir" data-reveal="up">
+        <p class="t-cap">Ready?</p>
+        <h2 class="prefooter__catch t-h1" data-scramble>Go onchain with the agent</h2>
+        <a href="https://pump.fun" target="_blank" rel="noopener" class="btn btn--solid btn--lg">Buy $VOKE</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer container">
+    <div class="footer__top">
+      <div class="footer__col">
+        <h3 class="t-cap">Navigation</h3>
+        <nav class="footer__links">
+          <a class="link" href="#token">Token</a>
+          <a class="link" href="#agent">Agent</a>
+          <a class="link" href="#community">Community</a>
+          <a class="link" href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+      <div class="footer__col">
+        <h3 class="t-cap">Social</h3>
+        <div class="footer__socials">
+          <a class="btn" href="#" target="_blank" rel="noopener">X.com</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn" href="https://github.com/vokemon/vokemon" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3 class="t-cap">Network</h3>
+        <div class="footer__links">
+          <span class="link" style="border:none;">Solana (SPL)</span>
+          <a class="link" href="mailto:gm@vokemon.xyz">gm@vokemon.xyz</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <p class="t-cap">© <span id="year"></span>, all rights reserved</p>
+      <p class="t-cap">VOKEMON · Built on Solana</p>
+    </div>
+  </footer>
+
+  <!-- ===================== HEADER (bottom pinned) ===================== -->
+  <header class="header">
+    <div class="header__inner box" data-theme="spot">
+      <a class="logo" href="#top">
+        <img class="logo__mark" src="assets/logo.png" alt="" onerror="this.remove()" />
+        <span class="logo__text">VOKE<span>MON</span></span>
+      </a>
+      <nav class="nav">
+        <a class="nav__link" href="#token">Token</a>
+        <a class="nav__link" href="#agent">Agent</a>
+        <a class="nav__link" href="#community">Community</a>
+      </nav>
+      <button class="nav__link nav__login" type="button" data-getstarted>Get Started</button>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#token">Token</a>
+    <a href="#agent">Agent</a>
+    <a href="#community">Community</a>
+    <a href="#" data-getstarted>Get Started</a>
+  </div>
+
+  <script src="js/auth.js?v=16"></script>
+  <script src="js/main.js?v=16"></script>
+  <script src="js/game.js?v=16"></script>
+</body>
+</html>

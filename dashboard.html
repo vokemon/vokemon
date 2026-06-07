@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#FF60DD" />
+  <title>VOKEMON — Agent Dashboard</title>
+  <meta name="description" content="VOKEMON agent control room — status, onchain brain, activity, and chat." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
+</head>
+<body class="dash-body" data-theme="noir">
+
+  <!-- ===================== TOP BAR ===================== -->
+  <header class="dash-bar container">
+    <a class="logo" href="index.html">
+      <img class="logo__mark" src="assets/logo.png" alt="" onerror="this.remove()" />
+      <span class="logo__text">VOKE<span>MON</span></span>
+    </a>
+    <div class="dash-bar__right">
+      <span class="dash-status"><span class="dash-dot"></span>Agent online</span>
+      <span class="dash-id badge" id="dashId">Guest · demo</span>
+      <a class="btn" href="index.html">← Site</a>
+      <button class="btn" id="logoutBtn" type="button" hidden>Log out</button>
+      <button class="btn btn--solid" id="dashLogin" type="button" data-login hidden>Log in</button>
+    </div>
+  </header>
+
+  <main class="dash container">
+
+    <!-- Page head -->
+    <section class="dash-head" data-reveal="up">
+      <p class="t-cap">Control room</p>
+      <h1 class="t-h1" data-scramble>Agent Dashboard</h1>
+      <p class="t-body dash-head__sub">Live view of the VOKEMON autonomous agent — its status, onchain brain, activity stream, and a direct line to chat with it.</p>
+    </section>
+
+    <!-- KPI grid -->
+    <section class="kpi-grid">
+      <article class="box kpi" data-theme="rose" data-reveal="scale">
+        <p class="t-cap">Agent status</p>
+        <p class="kpi__value">ONLINE</p>
+        <p class="kpi__meta">Model: Claude · Uptime <span id="uptime">00:00:00</span></p>
+      </article>
+      <article class="box kpi" data-theme="spot" data-reveal="scale">
+        <p class="t-cap">$VOKE price</p>
+        <p class="kpi__value">$0.0000</p>
+        <p class="kpi__meta kpi__up">Pre-launch · TBA</p>
+        <svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,24 14,20 28,22 42,14 56,16 70,9 84,12 100,4"/></svg>
+      </article>
+      <article class="box kpi" data-theme="spot" data-reveal="scale">
+        <p class="t-cap">Holders</p>
+        <p class="kpi__value" data-count="0">0</p>
+        <p class="kpi__meta">Tracked onchain</p>
+      </article>
+      <article class="box kpi" data-theme="bleu" data-reveal="scale">
+        <p class="t-cap">Agent treasury</p>
+        <p class="kpi__value">0 SOL</p>
+        <p class="kpi__meta">Wallet: not connected</p>
+      </article>
+    </section>
+
+    <!-- Activity + Chat -->
+    <section class="dash-cols">
+      <!-- Activity feed -->
+      <div class="box dash-panel" data-theme="spot" data-reveal="left">
+        <div class="dash-panel__head">
+          <h2 class="t-h4">Activity feed</h2>
+          <span class="badge">live</span>
+        </div>
+        <ul class="feed" id="feed">
+          <!-- filled by dashboard.js -->
+        </ul>
+      </div>
+
+      <!-- Chat -->
+      <div class="box dash-panel" data-theme="noir" data-reveal="right">
+        <div class="dash-panel__head">
+          <div class="chat-id">
+            <span class="chat-avatar">
+              <img src="assets/agent.png" alt="" onerror="this.remove()" />
+              <span class="chat-avatar__fb">V</span>
+            </span>
+            <div>
+              <h2 class="t-h4">Chat with VOKEMON</h2>
+              <p class="t-cap chat-sub">Autonomous agent · online</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat" id="chat"></div>
+        <form class="chat-form" id="chatForm">
+          <input class="chat-input" id="chatInput" type="text" placeholder="Ask the agent anything…" autocomplete="off" />
+          <button class="btn btn--solid" type="submit">Send</button>
+        </form>
+        <p class="t-cap chat-note">Demo responses. Wire a real LLM (Tier 1) to make this live — see README.</p>
+      </div>
+    </section>
+
+    <!-- Agent brain / config -->
+    <section class="box dash-panel" data-theme="spot" data-reveal="up">
+      <div class="dash-panel__head">
+        <h2 class="t-h4">Agent brain</h2>
+        <span class="badge">config</span>
+      </div>
+      <div class="brain-grid">
+        <div class="brain-card">
+          <p class="t-cap">Persona</p>
+          <p class="t-body">Degenerate-but-genius onchain native. Sharp, funny, relentless. Speaks in memes, thinks in candles.</p>
+        </div>
+        <div class="brain-card">
+          <p class="t-cap">Traits</p>
+          <div class="chips">
+            <span class="badge">curious</span><span class="badge">witty</span>
+            <span class="badge">tireless</span><span class="badge">onchain</span>
+          </div>
+        </div>
+        <div class="brain-card">
+          <p class="t-cap">Connections</p>
+          <div class="toggle-row"><span>X / Twitter</span><span class="switch" data-on></span></div>
+          <div class="toggle-row"><span>Telegram</span><span class="switch" data-on></span></div>
+          <div class="toggle-row"><span>Solana RPC</span><span class="switch" data-on></span></div>
+        </div>
+        <div class="brain-card">
+          <p class="t-cap">Autonomy</p>
+          <div class="meter"><span style="width:82%"></span></div>
+          <p class="kpi__meta">Posting freely · human override on</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Holdings -->
+    <section class="box dash-panel" data-theme="spot" data-reveal="up">
+      <div class="dash-panel__head">
+        <h2 class="t-h4">Onchain holdings</h2>
+        <span class="badge">Solana</span>
+      </div>
+      <div class="table-wrap">
+        <table class="dtable">
+          <thead>
+            <tr><th>Asset</th><th>Amount</th><th>Value</th><th>24h</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>$VOKE</td><td>—</td><td>—</td><td class="up">+0.0%</td></tr>
+            <tr><td>SOL</td><td>0.00</td><td>$0.00</td><td class="up">+0.0%</td></tr>
+            <tr><td>USDC</td><td>0.00</td><td>$0.00</td><td>0.0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="t-cap chat-note">Placeholder values — connect a wallet / RPC to populate.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer container">
+    <div class="footer__copyright">
+      <p class="t-cap">© <span id="year"></span> VOKEMON</p>
+      <p class="t-cap">Built on Solana · Agent demo</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js?v=16"></script>
+  <script src="js/main.js?v=16"></script>
+  <script src="js/dashboard.js?v=16"></script>
+</body>
+</html>
