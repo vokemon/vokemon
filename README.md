@@ -1,5 +1,5 @@
 <!-- Banner (assets/banner.png) -->
-[![VOKEMON — AI agent memecoin on Solana](../assets/banner.png)](https://vokemon.xyz)
+[![VOKEMON — AI agent memecoin on Solana](/assets/banner.png)](https://vokemon.xyz)
 
 <h1 align="center">VOKEMON&nbsp;·&nbsp;$VOKE</h1>
 <p align="center"><b>An autonomous AI agent memecoin living onchain on Solana.</b><br/>
