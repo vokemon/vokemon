@@ -40,31 +40,31 @@ A self-contained canvas platformer (pink pixel art). Auto-pilots an attract/teas
 
 ## 🖼️ Brand assets
 
-> Images live in [`/assets`](../assets). The banner above is `assets/banner.png` (add your own).
+> Images live in [`/assets`](/assets). The banner above is `assets/banner.png` (add your own).
 
 <p align="center">
-  <img src="../assets/favicon.png" width="84" alt="favicon" />
+  <img src="/assets/favicon.png" width="84" alt="favicon" />
   &nbsp;&nbsp;
-  <img src="../assets/logo.png"   width="130" alt="logo" />
+  <img src="/assets/logo.png"   width="130" alt="logo" />
   &nbsp;&nbsp;
-  <img src="../assets/coin.png"   width="130" alt="$VOKE coin" />
+  <img src="/assets/coin.png"   width="130" alt="$VOKE coin" />
   &nbsp;&nbsp;
-  <img src="../assets/agent.png"  width="130" alt="agent" />
+  <img src="/assets/agent.png"  width="130" alt="agent" />
 </p>
 <p align="center">
-  <img src="../assets/hero.png"   width="200" alt="hero key visual" />
+  <img src="/assets/hero.png"   width="200" alt="hero key visual" />
   &nbsp;&nbsp;
-  <img src="../assets/og.png"     width="260" alt="social share" />
+  <img src="/assets/og.png"     width="260" alt="social share" />
 </p>
 
 **Capability icons**
 
 <p align="center">
-  <img src="../assets/sector-1.png" width="90" alt="sector 1" />
-  <img src="../assets/sector-2.png" width="90" alt="sector 2" />
-  <img src="../assets/sector-3.png" width="90" alt="sector 3" />
-  <img src="../assets/sector-4.png" width="90" alt="sector 4" />
-  <img src="../assets/sector-5.png" width="90" alt="sector 5" />
+  <img src="/assets/sector-1.png" width="90" alt="sector 1" />
+  <img src="/assets/sector-2.png" width="90" alt="sector 2" />
+  <img src="/assets/sector-3.png" width="90" alt="sector 3" />
+  <img src="/assets/sector-4.png" width="90" alt="sector 4" />
+  <img src="/assets/sector-5.png" width="90" alt="sector 5" />
 </p>
 
 | File | Use | Suggested size |
